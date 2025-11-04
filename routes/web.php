@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\LivreController;
+use App\Http\Controllers\GenreLitteraireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,33 @@ use App\Http\Controllers\LivreController;
 | - Paramètres d'URL
 | - Routes nommées
 | - Contrôleurs
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Routes pour la gestion des Genres Littéraires
+|--------------------------------------------------------------------------
+|
+| Ces routes permettent de gérer le CRUD complet des genres littéraires.
+| Route::resource() génère automatiquement les 7 routes CRUD standard.
+|
+*/
+
+Route::resource('genres-litteraires', GenreLitteraireController::class);
+
+/*
+Routes générées automatiquement :
+┌────────┬──────────────────────────────────┬────────────────────────────────┐
+│ Méthode│ URI                              │ Action                         │
+├────────┼──────────────────────────────────┼────────────────────────────────┤
+│ GET    │ /genres-litteraires              │ GenreLitteraireController@index│
+│ GET    │ /genres-litteraires/create       │ GenreLitteraireController@create│
+│ POST   │ /genres-litteraires              │ GenreLitteraireController@store│
+│ GET    │ /genres-litteraires/{genre}      │ GenreLitteraireController@show │
+│ GET    │ /genres-litteraires/{genre}/edit │ GenreLitteraireController@edit │
+│ PUT    │ /genres-litteraires/{genre}      │ GenreLitteraireController@update│
+│ DELETE │ /genres-litteraires/{genre}      │ GenreLitteraireController@destroy│
+└────────┴──────────────────────────────────┴────────────────────────────────┘
 */
 
 Route::get('/test-debug', function () { 
